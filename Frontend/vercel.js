@@ -1,0 +1,26 @@
+{
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
+{
+  "rewrites": [
+    {
+      "source": "/Puneet.pdf",
+      "destination": "/public/Puneet.pdf"
+    }
+  ]
+}
+

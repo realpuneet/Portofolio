@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import aboutimg from '../assets/puneetup.png';
+import { gsap } from "gsap";
 
 const About = () => {
+
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsClicked(true);
+    setTimeout(() => setIsClicked(false), 300); // Reset the animation after 300ms
+  };
+
   const info = [
     {text: 'Experience', count: '03 mos'},
     {text: 'Completed Projects', count: '05'},
@@ -37,16 +46,24 @@ Express.js, React.js, and Node.js to cutting-edge projects.
               </div>
               <br />
               <br />
-               <a href="\Puneet.pdf" download>
-                <button className="btn-primary btn-1">Download CV</button>
-               </a>
+
+              <button
+                onClick={handleButtonClick}
+                className={`px-4 py-2 bg-cyan-600 text-white font-bold rounded-lg transition-transform ease-linear ${
+                  isClicked ? "scale-95" : "hover:scale-100"
+                }`}
+              >
+                <a href="../../public/Puneet.pdf" download target="_blank">
+                  Download CV
+                </a>
+              </button>            
             </div>
           </div>
 
           <div className="flex-1 md:mt-0 mt-6 flex justify-center items-center ">
-              <div className="lg:w-96 h-full relative sm:w-10/12 w-10/12 max-w-sm aboutImg ">
+              <div className="lg:w-96 h-full  relative sm:w-10/12 w-10/12 max-w-sm aboutImg ">
                 <img src={aboutimg} alt="" 
-                className="w-full object-cover bg-cyan-600 rounded-xl"
+                className="w-full object-cover bg-cyan-600 rounded-xl hover:rotate-12 transition-all ease-in-out duration-1000"
                 />
               </div>
           </div>

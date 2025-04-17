@@ -1,13 +1,14 @@
-import React from "react";
-import hero from "../assets/crop.jpeg"  ;
+import React, { useEffect } from "react";
+import hero from "../assets/crop.jpeg";
 
 const Hero = () => {
+ 
   const social_media = [
     { logo: "logo-instagram", link: "https://www.instagram.com/realpuneet" },
     { logo: "logo-facebook", link: "https://www.facebook.com/realpuneet" },
     { logo: "logo-linkedin", link: "https://www.linkedin.com/in/realpuneet" },
     { logo: "logo-twitter", link: "https://x.com/realpuneet22" },
-    { logo: "logo-github", link: "https://github.com/realpuneet" }, // Added GitHub link
+    { logo: "logo-github", link: "https://github.com/realpuneet" },
   ];
 
   return (
@@ -15,7 +16,7 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex px-5 py-10 md:flex-row flex-col items-center"
     >
-      <div className="flex-1 items-center justify-center h-full">
+      <div className="main-img flex-1 items-center justify-center h-full">
         <img
           src={hero}
           alt=""
